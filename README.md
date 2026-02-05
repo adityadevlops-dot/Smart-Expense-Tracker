@@ -6,7 +6,6 @@
 
 A comprehensive, production-ready Python expense tracking application with both console and GUI interfaces. Track your income and expenses, generate reports, visualize spending patterns, and export data - all in one powerful tool.
 
-![Smart Expense Tracker](https://via.placeholder.com/800x400/2E86AB/FFFFFF?text=Smart+Expense+Tracker)
 
 ---
 
