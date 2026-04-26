@@ -1,95 +1,137 @@
-# 💰 Smart Expense Tracker
+# Smart Expense Tracker
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-A comprehensive, production-ready Python expense tracking application built with **Streamlit**. Track your income and expenses, generate reports, visualize spending patterns, and export data - all in one powerful interactive web app.
+A production-ready Python expense tracking application built with **Streamlit**. Manage income and expenses, generate reports, visualize spending patterns, and export data with ease.
 
----
+## Overview
 
-## ✨ Features
+Smart Expense Tracker is a comprehensive personal finance management tool designed for users who need quick and efficient expense tracking with visual insights. Built with Python and Streamlit, it provides an intuitive interface for managing transactions across multiple categories.
 
-### Core Features
-- ➕ **Add Income** - Record your earnings with descriptions
-- ➖ **Add Expenses** - Track spending across multiple categories
-- 📊 **View Summary** - See total income, expenses, and current balance
-- 📅 **Monthly Reports** - Filter and analyze transactions by month/year
-- 💾 **Persistent Storage** - All data saved automatically in JSON format
-- ✅ **Input Validation** - Robust error handling and data validation
-- 🎨 **Interactive Dashboard** - Beautiful Streamlit web interface
+## Features
 
-### Expense Categories
-- 🍔 Food
-- ✈️ Travel
-- 🏠 Rent
-- ⚡ Utilities
-- 🎬 Entertainment
-- 🏥 Healthcare
-- 🛒 Shopping
-- 📚 Education
-- 📦 Others
+### Core Functionality
+- Add and manage income entries
+- Track expenses across multiple predefined categories
+- View real-time account summary (income, expenses, balance)
+- Generate monthly reports with date/category filtering
+- Automatic persistent storage in JSON format
+- Input validation and error handling
+- Interactive web-based dashboard
 
-### Optional Enhancements
-- 📁 **CSV Export** - Export all transactions to spreadsheet-compatible format
-- 📈 **Data Visualization** - Interactive charts with Plotly/Matplotlib
-- 💡 **Smart Analytics** - Category-wise spending breakdown
-- 🔄 **Real-time Updates** - Instant balance calculations
+### Data Management
+- CSV export for all transactions
+- Category-wise spending breakdown
+- Monthly transaction filtering
+- Real-time balance calculations
+- Transaction history with timestamps
 
----
+### Available Expense Categories
+- Food
+- Travel
+- Rent
+- Utilities
+- Entertainment
+- Healthcare
+- Shopping
+- Education
+- Others
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Python 3.8+ | Core programming language |
-| Streamlit | Web framework & UI |
-| JSON | Data persistence |
-| Pandas | Data manipulation |
-| Plotly/Matplotlib | Data visualization |
-| datetime | Date and time handling |
+| Component | Technology |
+|-----------|-----------|
+| Language | Python 3.8+ |
+| Framework | Streamlit |
+| Data Format | JSON |
+| Data Analysis | Pandas |
+| Visualization | Plotly/Matplotlib |
+| Utilities | datetime module |
 
----
+## Project Structure
 
-## 📁 Project Structure
 ```
 smart-expense-tracker/
-│
-├── app.py                 # Main Streamlit application
-├── pages/                 # Streamlit multi-page app pages
-│   ├── add_expense.py
-│   ├── add_income.py
-│   ├── view_reports.py
-│   └── visualizations.py
-├── utils/                 # Utility modules
-│   ├── storage.py         # JSON file operations
-│   ├── expense.py         # Expense logic
-│   └── helpers.py         # Helper functions
-├── data.json              # Persistent data storage file
-├── requirements.txt       # Python dependencies
-├── .gitignore             # Git ignore file
-└── README.md              # Project documentation
+├── app.py                      # Main Streamlit application
+├── pages/                      # Multi-page components
+│   ├── add_expense.py         # Expense entry interface
+│   ├── add_income.py          # Income entry interface
+│   ├── view_reports.py        # Report generation and filtering
+│   └── visualizations.py      # Charts and data visualization
+├── utils/                      # Utility modules
+│   ├── storage.py             # JSON file operations
+│   ├── expense.py             # Expense processing logic
+│   └── helpers.py             # Helper functions
+├── data.json                  # Transaction storage
+├── requirements.txt           # Python dependencies
+├── .gitignore                 # Git ignore rules
+└── README.md                  # Documentation
 ```
 
----
+## Application Flow
 
-## 🚀 Installation
+```
+┌─────────────────────────────────────────┐
+│       User Launches Application         │
+└────────────────┬────────────────────────┘
+                 │
+        ┌────────┴────────┐
+        │                 │
+    ┌───▼──────┐    ┌─────▼────┐
+    │ Dashboard│    │  Sidebar  │
+    └───┬──────┘    │ Navigation│
+        │           └─────┬────┘
+        │                 │
+    ┌───┴─────────────────┴──────┐
+    │                             │
+┌───▼────┐  ┌────────┐  ┌──────┐ │
+│Add     │  │Add     │  │View  │ │
+│Expense │  │Income  │  │Report│ │
+└───┬────┘  └────┬───┘  └──┬───┘ │
+    │            │         │     │
+    └────────────┼─────────┘     │
+                 ▼                │
+    ┌──────────────────────┐     │
+    │  Validate & Process  │     │
+    │      Input Data      │     │
+    └──────┬───────────────┘     │
+           │                      │
+        ┌──▼──────────┐           │
+        │  Save to    │           │
+        │  data.json  │           │
+        └──┬──────────┘           │
+           │                      │
+        ┌──▼──────────────────────┼──┐
+        │  Display Results &      │  │
+        │  Generate Visualizations│  │
+        └───────────────────────┬─┘  │
+                                 │   │
+                    ┌────────────┴───┘
+                    │
+            ┌───────▼────────┐
+            │ User Dashboard │
+            │ with Charts    │
+            └────────────────┘
+```
+
+## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
-- pip (Python package manager)
-- Git (for cloning the repository)
+- pip package manager
+- Git (for cloning)
 
 ### Step-by-Step Setup
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/smart-expense-tracker.git
-   cd smart-expense-tracker
+   git clone https://github.com/adityadevlops-dot/Smart-Expense-Tracker.git
+   cd Smart-Expense-Tracker
    ```
 
-2. **Create a virtual environment** (recommended)
+2. **Create virtual environment** (recommended)
    ```bash
    # Windows
    python -m venv venv
@@ -109,33 +151,40 @@ smart-expense-tracker/
    ```bash
    streamlit run app.py
    ```
+   
+   The app will open automatically at `http://localhost:8501`
 
-   The app will open in your default browser at `http://localhost:8501`
+## Usage
 
----
+### Getting Started
 
-## 📖 Usage
+1. Launch the application with `streamlit run app.py`
+2. Navigate using the sidebar menu
+3. Select your desired action:
+   - **Add Expense**: Record new spending
+   - **Add Income**: Log earnings
+   - **View Reports**: Analyze transactions
+   - **Visualizations**: View charts and trends
 
-### Dashboard Features
-- **Home Page** - Overview of income, expenses, and balance
-- **Add Income** - Add new income entries
-- **Add Expense** - Record new expenses with category selection
-- **View Reports** - Filter transactions by date/category
-- **Visualizations** - Interactive charts and analytics
-- **Export Data** - Download transactions as CSV
+### Workflow Example
 
-### Example Workflow
-1. Open the app (`streamlit run app.py`)
-2. Click "Add Expense" from the sidebar
-3. Enter amount, select category, add description
-4. Click "Save" - data is stored instantly
-5. View your balance and reports in real-time
+```
+1. Launch App
+   ↓
+2. Navigate to "Add Expense"
+   ↓
+3. Enter Amount → Select Category → Add Description
+   ↓
+4. Click "Save"
+   ↓
+5. View updated balance in Dashboard
+   ↓
+6. Generate reports for analysis
+```
 
----
+### Data Format
 
-## 💾 Data Storage
-
-Your transactions are automatically saved in `data.json` with the following structure:
+Transactions are stored in `data.json` with the following structure:
 
 ```json
 {
@@ -146,7 +195,7 @@ Your transactions are automatically saved in `data.json` with the following stru
       "amount": 500,
       "category": "Food",
       "description": "Grocery shopping",
-      "date": "2026-02-05"
+      "date": "2026-04-26"
     },
     {
       "id": 2,
@@ -154,93 +203,60 @@ Your transactions are automatically saved in `data.json` with the following stru
       "amount": 5000,
       "category": "Salary",
       "description": "Monthly salary",
-      "date": "2026-02-01"
+      "date": "2026-04-01"
     }
   ]
 }
 ```
 
----
+## Reports & Visualization
 
-## 📊 Reports & Visualization
+### Report Features
+- Monthly transaction summaries
+- Category-wise expense breakdown
+- Income vs expense comparison
+- Spending trend analysis
+- Custom date range filtering
 
-### Monthly Reports
-- View all transactions for a specific month/year
-- See category-wise breakdown
-- Calculate total income and expenses
-- Track spending trends
+### Available Charts
+- Pie charts for spending distribution
+- Bar charts for monthly trends
+- Line charts for balance progression
+- Category drill-down analysis
 
-### Interactive Charts & Graphs
-- 📊 Pie charts for spending distribution
-- 📈 Bar charts for monthly trends
-- 📉 Line charts for balance history
-- 🎯 Category analysis with drill-down
+## Troubleshooting
 
----
+| Issue | Solution |
+|-------|----------|
+| `ModuleNotFoundError: streamlit` | Run `pip install -r requirements.txt` |
+| Port 8501 already in use | Use `streamlit run app.py --server.port 8502` |
+| `data.json` not found | App creates it automatically on first run |
+| App not reflecting changes | Restart with `streamlit run app.py --logger.level=debug` |
 
-## 🐛 Troubleshooting
+## Contributing
 
-### Issue: `ModuleNotFoundError: No module named 'streamlit'`
-**Solution:** Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### Issue: Port 8501 is already in use
-**Solution:** Run on a different port
-```bash
-streamlit run app.py --server.port 8502
-```
-
-### Issue: `data.json` not found
-**Solution:** The file is created automatically on first run. If it doesn't appear, check folder permissions.
-
-### Issue: Changes not reflecting
-**Solution:** Streamlit auto-reloads. If not working, restart the app:
-```bash
-streamlit run app.py --logger.level=debug
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. To contribute:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit your changes (`git commit -m 'Add improvement'`)
+4. Push to the branch (`git push origin feature/improvement`)
 5. Open a Pull Request
 
----
+## License
 
-## 📄 License
+Licensed under MIT License - see [LICENSE](LICENSE) for details.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Author
 
----
+**Aditya**  
+GitHub: [adityadevlops-dot](https://github.com/adityadevlops-dot)
 
-## 👨‍💻 Author
+## Support
 
-**Aditya**
-- GitHub: [https://github.com/adityadevlops-dot](https://github.com/adityadevlops-dot)
-
----
-
-## 📮 Support
-
-If you have any questions or issues, please open an issue on [GitHub Issues](https://github.com/yourusername/smart-expense-tracker/issues).
+For issues or questions, open an issue on [GitHub Issues](https://github.com/adityadevlops-dot/Smart-Expense-Tracker/issues).
 
 ---
 
-## 🙏 Acknowledgments
-
-- Thanks to **Streamlit** for the amazing framework
-- Python community for excellent libraries
-- All users for their feedback and support
-
----
-
-**Last Updated:** February 5, 2026  
+**Last Updated:** April 2026  
 **Version:** 1.0.0
